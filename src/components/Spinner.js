@@ -8,8 +8,8 @@ import './Spinner.css';
 const Spinner = () => {
     return (
         <Fragment>
-        <div class="loadingio-spinner-rolling-vi55qkynrqc">
-          <div class="ldio-snl1dyaqikp">
+        <div className="loadingio-spinner-rolling-vi55qkynrqc">
+          <div className="ldio-snl1dyaqikp">
                 <div></div>
               </div>
           </div>

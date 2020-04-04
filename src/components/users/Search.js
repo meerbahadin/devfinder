@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import pic from './Searching.png'
 
 class Search extends Component {
     state = {
@@ -20,16 +21,17 @@ class Search extends Component {
     }
     render() {
         return (
-            <div>
-                <form action="" onSubmit={this.handleSubmit} className="mb-2">
-                <input className="form-control form-control-md mb-2" 
+            <div className="text-center">
+            <img src={pic} alt="" srcset="" width="500px"/>
+                <form action="" onSubmit={this.handleSubmit} className="mb-2 mt-4">
+                <input className="form-control form-control-md mb-2 p-4 border-0 bg-light" 
                 type="text" 
                 name='text'
                 placeholder="Type The Name" 
                 value={this.state.text}
                 onChange={this.handleChange}  
                  />
-                <button type="submit" className="btn btn-primary btn-block">Search</button>
+                <button type="submit" className="btn btn-warning btn-block">Search</button>
                 </form>
                 {this.props.show &&   <button className='btn btn-light btn-block'
                  onClick={this.props.cls}>
