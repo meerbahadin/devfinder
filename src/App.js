@@ -18,17 +18,17 @@ class App extends Component {
     alert: null
   }
   
-  //if you want to load all user by default
+  // if you want to load all user by default
   // async componentDidMount() {
   //   this.setState({loading : true});
 
-  //   // axios.get('https://api.github.com/users').then(res => {
-  //   //   console.log(res.data);
-  //   // })
+  //   axios.get('https://api.github.com/users').then(res => {
+  //     console.log(res.data);
+  //   })
 
-  //   // const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_ID}
-  //   // &client_seceret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-  //   // this.setState({users : res.data , loading : false});
+  //   const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_ID}
+  //   &client_seceret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+  //   this.setState({users : res.data , loading : false});
 
   // }
 
