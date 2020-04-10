@@ -11,7 +11,7 @@ class Search extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        if(this.state.text === '') {
+        if (this.state.text === '') {
             this.props.setAlert('Please Enter Something' , 'light');
         } else {
             this.props.searchUsers(this.state.text);
@@ -22,7 +22,11 @@ class Search extends Component {
     render() {
         return (
             <div className="text-center">
-            <img src={pic} alt="" srcset="" width="500px"/>
+            <div className="row justify-content-center">
+                <div className="col-lg-6">
+                <img src={pic} alt="" srcset="" width="100%"/>
+                </div>
+            </div>
                 <form action="" onSubmit={this.handleSubmit} className="mb-2 mt-4">
                 <input className="form-control form-control-md mb-2 p-4 border-0 bg-light" 
                 type="text" 

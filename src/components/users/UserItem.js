@@ -1,8 +1,9 @@
 import React from 'react'
+import { motion } from "framer-motion";
 import {Link} from 'react-router-dom';
 const  UserItem = ({user : {id , login , avatar_url , html_url}}) => {
         return (
-            <div className='col-lg-3 col-md-6 col-sm-12'>
+            <motion.div className='col-lg-3 col-md-6 col-sm-12' initial={{x:-100}} animate={{x:0}}>
             <div className="card mb-3 text-center mt-4 border-0 shadow-sm">
                     <div className="card-header border-0">{id}</div>
                     <div className="card-body">
@@ -13,7 +14,7 @@ const  UserItem = ({user : {id , login , avatar_url , html_url}}) => {
                         <Link className="btn btn-success" to={`/user/${login}`}>View The Profile</Link>
                     </div>
             </div>
-            </div>
+            </motion.div>
         )
     
 }

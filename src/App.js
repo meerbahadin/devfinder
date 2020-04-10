@@ -1,7 +1,7 @@
 import React , {Component, Fragment} from 'react';
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 import './App.css';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navbar/Navbar'
 import Users from './components/users/Users';
 import User from './components/users/User';
 import Search from './components/users/Search';
@@ -72,17 +72,17 @@ class App extends Component {
   }
 
   render() {
-    const { users , user , loading , repos} = this.state;
+    const { users , user , loading , repos , alert} = this.state;
     return (
       <Router>
       <div className="App">
           <Navbar title='Github Finder'/>
           <div className="container">
-          <Alert alert={this.state.alert}/>
+           <Alert alert={alert}/>
           <Switch>
             <Route exact path='/' render={props => (
               <Fragment>
-              <Search searchUsers={this.searchUsers} cls={this.cls} show={this.state.users.length > 0 ? true : false}
+              <Search searchUsers={this.searchUsers} cls={this.cls} show={users.length > 0 ? true : false}
               setAlert={this.setAlert}/>
               <Users loading={loading} users={users} />
               </Fragment>
