@@ -1,49 +1,51 @@
-import React, { Component } from 'react'
-import pic from './Searching.png'
+import React, {useState, useContext} from 'react';
+import pic from './Searching.png';
+import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/alert/alertContext';
 
-class Search extends Component {
-    state = {
-        text : ''
-    }
+const Search = () => {
 
-    handleChange = (e) => {
-        this.setState({[e.target.name] : e.target.value})
+    const githubContext = useContext(GithubContext);
+    const alertContext = useContext(AlertContext);
+
+    const [text, setText] = useState('');
+
+    const handleChange = (e) => {
+        setText(e.target.value)
     }
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (this.state.text === '') {
-            this.props.setAlert('Please Enter Something' , 'light');
+        if (text === '') {
+            alertContext.setAlert('Please Enter Something' , 'light');
         } else {
-            this.props.searchUsers(this.state.text);
-            this.setState({text : ''}) 
+           githubContext.searchUsers(text);
+            setText('');
         }
        
     }
-    render() {
         return (
             <div className="text-center">
             <div className="row justify-content-center">
                 <div className="col-lg-6">
-                <img src={pic} alt="" srcset="" width="100%"/>
+                <img src={pic} alt="" width="100%"/>
                 </div>
             </div>
-                <form action="" onSubmit={this.handleSubmit} className="mb-2 mt-4">
-                <input className="form-control form-control-md mb-2 p-4 border-0 bg-light" 
-                type="text" 
-                name='text'
-                placeholder="Type The Name" 
-                value={this.state.text}
-                onChange={this.handleChange}  
-                 />
-                <button type="submit" className="btn btn-warning btn-block">Search</button>
+                <form action="" onSubmit={handleSubmit} className="mb-2 mt-4">
+                    <input className="form-control form-control-md mb-2 p-4 border-0 bg-light" 
+                    type="text" 
+                    name='text'
+                    placeholder="Type The Name" 
+                    value={text}
+                    onChange={handleChange}  
+                    />
+                    <button type="submit" className="btn btn-warning btn-block">Search</button>
                 </form>
-                {this.props.show &&   <button className='btn btn-light btn-block'
-                 onClick={this.props.cls}>
+                {githubContext.users.length > 0 &&   <button className='btn btn-light btn-block'
+                 onClick={githubContext.cls}>
                 Clear
                 </button>}
             </div>
         )
-    }
 }
 
 export default Search;

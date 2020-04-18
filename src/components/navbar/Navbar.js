@@ -6,7 +6,6 @@ const Navbar = (props) => {
   useEffect(() => {
    const item = document.querySelector('.collapse.navbar-collapse');
    const toggler = document.querySelector('.navbar-toggler-icon');
-   console.log(item)
    let isopen = false;
    toggler.addEventListener('click' , () => {
      if (isopen === false) {
@@ -20,7 +19,7 @@ const Navbar = (props) => {
   }, [])
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-            <a className="navbar-brand" href="#" ><motion.span animate={{opacity : [0,1]}}  transition={{yoyo: Infinity, duration: 1, ease: "easeInOut"
+            <a className="navbar-brand"><motion.span animate={{opacity : [0,1]}}  transition={{yoyo: Infinity, duration: 1, ease: "easeInOut"
   }}><FiGithub/></motion.span><span className='lead ml-3'>{props.title}</span></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

@@ -1,17 +1,22 @@
-import React, { Fragment,Component } from 'react';
+import React, { Fragment, useEffect , useContext } from 'react';
 import Repos from '../repos/Repos';
 import Spinner from '../Spinner';
 import {Link} from 'react-router-dom';
 import { FiCheckSquare , FiXSquare } from "react-icons/fi";
+import GithubContext from '../../context/github/githubContext';
 
-export class User extends Component {
+const User = ({match}) =>  {
 
-    componentDidMount() {
-        this.props.getUser(this.props.match.params.login);
-        this.props.getUserRepos(this.props.match.params.login);
-    }
+    const githubContext = useContext(GithubContext);
 
-    render() {
+    const {getUser , user , loading , repos , getUserRepos} = githubContext;
+
+    useEffect(() => {
+        getUser(match.params.login);
+        getUserRepos(match.params.login);
+        //eslint-disable-next-line
+    }, [])
+
         const {
             name ,
             avatar_url ,
@@ -27,9 +32,8 @@ export class User extends Component {
             public_repos,
             public_gists,
             hireable
-        } = this.props.user;
+        } = user;
 
-        const { loading , repos } = this.props;
 
         if(loading) return (
           <div className='row justify-content-center'>
@@ -74,7 +78,7 @@ export class User extends Component {
                     </div>
                     </div>
 
-                    <div class="card text-center mt-3 bg-light border-0">
+                    <div className="card text-center mt-3 bg-light border-0">
                         <div class="card-body">
                             <div className="badge badge-primary p-2">
                                 Followers : {followers}
@@ -95,7 +99,8 @@ export class User extends Component {
                     <Repos repos={repos}/>
             </Fragment>
         )
-    }
+
 }
+
 
 export default User
