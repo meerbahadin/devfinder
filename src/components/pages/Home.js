@@ -6,8 +6,8 @@ import Users from '../users/Users';
 const About = () => {
     return (
         <Fragment>
-            <Search/>
-            <Users/>
+        <Search/>
+        <Users/>
         </Fragment>
     )
 }

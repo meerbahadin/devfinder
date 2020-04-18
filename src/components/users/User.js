@@ -42,12 +42,12 @@ const User = ({match}) =>  {
         )
         return (
             <Fragment>
-               <Link className="btn btn-light mr-2" to='/'>Back</Link>
-               <a  className="btn btn-light">
+               <Link className="btn btn-primary mr-2" to='/'>Back</Link>
+               <a  className="btn bg-secondary">
                Hireable {' '}: 
                {hireable ? <FiCheckSquare className='text-success'/> : <FiXSquare className='text-danger'/>}
                </a>
-               <div className="card text-center mt-4 bg-light border-0">
+               <div className="card text-center mt-4 bg-secondary border-0">
                     <div className="card-body">
                     <img src={avatar_url} alt="" width="150px" className="rounded-circle mb-2"/>
                         <h3 className="card-title font-weight-bold">{name}</h3>
@@ -78,7 +78,7 @@ const User = ({match}) =>  {
                     </div>
                     </div>
 
-                    <div className="card text-center mt-3 bg-light border-0">
+                    <div className="card text-center mt-3">
                         <div class="card-body">
                             <div className="badge badge-primary p-2">
                                 Followers : {followers}

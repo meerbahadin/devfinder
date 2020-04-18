@@ -1,0 +1,14 @@
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.26),rgba(0, 0, 0, 0.555)),url('./bg.png');
+    background-size: cover;
+    height: auto;
+}
+
+.mt-10 {
+    margin-top: 50px;
+}
+.heading-main {
+    color: white;
+    font-weight: 700;
+    font-size: 4rem;
+}
