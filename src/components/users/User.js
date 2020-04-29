@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom';
 import { FiCheckSquare , FiXSquare } from "react-icons/fi";
 import GithubContext from '../../context/github/githubContext';
 
-const User = ({match}) =>  {
+const User = ({ match }) =>  {
 
     const githubContext = useContext(GithubContext);
 
-    const {getUser , user , loading , repos , getUserRepos} = githubContext;
+    const { getUser , user , loading , repos , getUserRepos } = githubContext;
 
     useEffect(() => {
         getUser(match.params.login);
@@ -33,8 +33,7 @@ const User = ({match}) =>  {
             public_gists,
             hireable
         } = user;
-
-
+        
         if(loading) return (
           <div className='row justify-content-center'>
                 <Spinner/>
@@ -79,7 +78,7 @@ const User = ({match}) =>  {
                     </div>
 
                     <div className="card text-center mt-3">
-                        <div class="card-body">
+                        <div className="card-body">
                             <div className="badge badge-primary p-2">
                                 Followers : {followers}
                             </div>

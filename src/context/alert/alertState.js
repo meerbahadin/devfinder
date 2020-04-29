@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import AlertContect from './alertContext';
+import AlertContext from './alertContext';
 import AlertReducer from './alertReducer';
 import {
     SET_ALERT,
@@ -27,14 +27,14 @@ const AlertState = props => {
     
 
     return (
-        <AlertContect.Provider value = {{
+        <AlertContext.Provider value = {{
            alert:state,
            setAlert
         }}>
 
         {props.children}
 
-        </AlertContect.Provider>
+        </AlertContext.Provider>
     )
 }
 
