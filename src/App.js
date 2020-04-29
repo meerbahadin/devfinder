@@ -9,8 +9,8 @@ import Home from './components/pages/Home';
 import NotFound from './components/pages/NotFound';
 
 //state
-import GithubState from './context/github/GithubState';
-import AlertState from './context/alert/AlertState';
+import GithubState from './context/github/githubState';
+import AlertState from './context/alert/alertState';
 
 const App = () => {
 
