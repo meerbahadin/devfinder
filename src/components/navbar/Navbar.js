@@ -1,4 +1,4 @@
-import React ,{useEffect, Fragment}from 'react'
+import React ,{ Fragment}from 'react'
 import { FiGithub } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";

@@ -1,5 +1,6 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer } from "react";
 import axios from "axios";
+
 import GithubContext from "./githubContext";
 import GithubReducer from "./githubReducer";
 
@@ -23,6 +24,8 @@ if (process.env.NODE_ENV !== "production") {
   githubClientSeceret = process.env.GITHUB_CLIENT_SECRET;
 }
 
+
+//or we can call this GithubProvider
 const GithubState = (props) => {
   const initialState = {
     users: [],
@@ -45,7 +48,6 @@ const GithubState = (props) => {
         type: SEARCH_USERS,
         payload: res.data.items,
       });
-
     } else {
       dispatch({
         type: EMPTY_USERS,
@@ -104,4 +106,5 @@ const GithubState = (props) => {
   );
 };
 
+//or we can call this GithubProvider
 export default GithubState;

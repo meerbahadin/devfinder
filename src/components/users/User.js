@@ -1,19 +1,22 @@
 import React, { Fragment, useEffect , useContext } from 'react';
 import Repos from '../repos/Repos';
 import Spinner from '../Spinner';
-import {Link} from 'react-router-dom';
+import { Link , useParams } from 'react-router-dom';
 import { FiCheckSquare , FiXSquare } from "react-icons/fi";
 import GithubContext from '../../context/github/githubContext';
 
-const User = ({ match }) =>  {
+//state
+const User = () =>  {
 
     const githubContext = useContext(GithubContext);
 
     const { getUser , user , loading , repos , getUserRepos } = githubContext;
+    const {id} = useParams();
 
     useEffect(() => {
-        getUser(match.params.login);
-        getUserRepos(match.params.login);
+        console.log(id);
+        getUser(id);
+        getUserRepos(id);
         //eslint-disable-next-line
     }, [])
 

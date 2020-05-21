@@ -8,7 +8,7 @@ import About from './components/pages/About';
 import Home from './components/pages/Home';
 import NotFound from './components/pages/NotFound';
 
-//state
+//state , we could called this GithubProvider
 import GithubState from './context/github/githubState';
 import AlertState from './context/alert/alertState';
 
@@ -25,7 +25,7 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route exact path='/about' component={ About }/>
-            <Route exact path='/user/:login' component={User}/>
+            <Route exact path='/user/:id' component={User}/> 
             <Route component={NotFound}/>
           </Switch>
           </div>
